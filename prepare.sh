@@ -6,3 +6,7 @@ sed -i 's/192.168.1.1/192.168.99.1/g' package/base-files/files/bin/config_genera
 
 # Delete ula prefix
 sed -i 's/network.globals.ula_prefix=\'auto\'/network.globals.ula_prefix=\'\'/g' package/base-files/files/bin/config_generate
+
+# Modify default settings
+sed -i '$i uci set luci.sauth.sessiontime=\'0\'' package/emortal/default-settings/files/99-default-settings-chinese
+sed -i '$i uci commit luci\n' package/emortal/default-settings/files/99-default-settings-chinese
