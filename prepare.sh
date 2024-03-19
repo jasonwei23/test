@@ -11,3 +11,6 @@ sed -i '$i uci delete network.globals.ula_prefix' openwrt/package/emortal/defaul
 sed -i '$i uci commit network' openwrt/package/emortal/default-settings/files/99-default-settings-chinese
 sed -i '$i uci set firewall.@defaults[0].flow_offloading_hw=\x270\x27' openwrt/package/emortal/default-settings/files/99-default-settings-chinese
 sed -i '$i uci commit firewall' openwrt/package/emortal/default-settings/files/99-default-settings-chinese
+
+mkdir -p openwrt/package/new
+git clone -b main --depth 1 https://github.com/jasonwei23/pkg.git openwrt/package/new
